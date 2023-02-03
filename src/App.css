@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.App {
+  display: grid;
+  grid-template: 1fr 9fr / 1fr;
+  padding: 3rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.Navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 15rem;
+}
+
+.Navbar input {
+  width: 15rem;
+}
+
+.Navbar button {
+  width: 5rem;
+}
