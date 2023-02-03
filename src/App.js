@@ -1,5 +1,3 @@
-App.js
-
 import Weather from "./Weather";
 import './App.css';
 import { useState } from "react";
