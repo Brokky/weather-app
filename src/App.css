@@ -2,12 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #eee;
+  border: none;
+  background: none;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(sunny-day-minimal-mountains.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .App {
-  display: grid;
-  grid-template: 1fr 9fr / 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   padding: 3rem;
   justify-items: center;
   align-items: center;
@@ -15,27 +29,77 @@
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
-
-  width: 15rem;
 }
 
 .navbar input {
   width: 15rem;
+  height: 2rem;
+  padding-left: 0.6rem;
+  padding-right: 2.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.navbar input:focus {
+  background: white;
+  transition: 1s;
+}
+
+.navbar input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar button {
-  width: 5rem;
+  width: 40%;
+  padding: 0.3rem;
+  font-size: 1rem;
   cursor: pointer;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.navbar button:hover {
+  transform: scale(1.3);
+  background-color: black;
+  color: #69c5ee;
+  transition: 1s;
 }
 
 .weather-wrapper {
-  font-size: 1.5rem;
-  text-align: center
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-.weather-wrapper > p:first-child {
-  margin-bottom: 1rem;
+.weather-wrapper>div {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.search {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0;
+  right: -0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.search-icon:hover {
+  background-color: black;
+  color: #69c5ee;
+  transition: 1s;
 }

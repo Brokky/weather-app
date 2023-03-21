@@ -12,7 +12,6 @@ function Weather(props) {
             );
             const data = await response.json();
             setWeather(data);
-            console.log();
         }
         getWeather();
     }, [props.city, props.units, apiKey]);
@@ -25,7 +24,10 @@ function Weather(props) {
 
     return (
         <div className='weather-wrapper'>
-            <p>{weather.name}, {new Intl.DisplayNames(['en'], { type: 'region' }).of(weather.sys.country)}</p>
+            <div>
+                <img src={"https://flagsapi.com/" + weather.sys.country + "/shiny/64.png"}></img>
+                <p>{weather.name}, {new Intl.DisplayNames(['en'], { type: 'region' }).of(weather.sys.country)}</p>
+            </div>
             <p>Current temperature: {weather.main.temp} {props.units.temp}</p>
             <p>Feels like: {weather.main.feels_like} {props.units.temp}</p>
             <p>Summary: {weather.weather[0].main}</p>

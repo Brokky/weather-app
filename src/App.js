@@ -39,9 +39,11 @@ function App() {
     }
   }
 
-  function changeCity(event) {
+  function changeCity() {
 
-    let newCity = event.target.value;
+    let newCity = document.querySelector('#cityInp').value;
+
+    console.log(newCity);
 
     setCity(newCity);
   }
