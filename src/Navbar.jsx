@@ -10,11 +10,11 @@ function Navbar(props) {
 
 
     return (
-        <div className="Navbar">
+        <div className="navbar">
             <input
                 id="cityInp"
                 placeholder="City"
-                onBlur={props.changeCity}
+                onInput={props.changeCity}
                 onKeyDown={handleKeyDown}
             />
             <button onClick={props.changeUnits}>{props.units.temp}</button>

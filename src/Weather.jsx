@@ -12,9 +12,10 @@ function Weather(props) {
             );
             const data = await response.json();
             setWeather(data);
+            console.log();
         }
         getWeather();
-    }, [props.city, props.units]);
+    }, [props.city, props.units, apiKey]);
 
     if (weather === null) {
         return <div>Loading weather data...</div>;
@@ -23,8 +24,8 @@ function Weather(props) {
     }
 
     return (
-        <div>
-            <p>{weather.name}</p>
+        <div className='weather-wrapper'>
+            <p>{weather.name}, {new Intl.DisplayNames(['en'], { type: 'region' }).of(weather.sys.country)}</p>
             <p>Current temperature: {weather.main.temp} {props.units.temp}</p>
             <p>Feels like: {weather.main.feels_like} {props.units.temp}</p>
             <p>Summary: {weather.weather[0].main}</p>
